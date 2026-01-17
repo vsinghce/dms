@@ -1,1 +1,3 @@
-pyyaml>=6.0
+# No dependencies required for core functionality
+# Add dependencies here as needed
+
