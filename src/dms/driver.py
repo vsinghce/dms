@@ -2,7 +2,7 @@
 Driver class representing a driver entity in the monitoring system.
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Optional
 
@@ -38,7 +38,7 @@ class Driver:
         self.driver_id = driver_id
         self.name = name
         self.status = status
-        self.last_updated = datetime.now()
+        self.last_updated = datetime.now(timezone.utc)
     
     def update_status(self, new_status: DriverStatus) -> None:
         """
@@ -48,7 +48,7 @@ class Driver:
             new_status: The new status to set
         """
         self.status = new_status
-        self.last_updated = datetime.now()
+        self.last_updated = datetime.now(timezone.utc)
     
     def get_info(self) -> dict:
         """
