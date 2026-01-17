@@ -1,0 +1,27 @@
+# Configuration file for example usage
+# This demonstrates how configuration could be loaded for the DMS
+
+drivers:
+  - id: "D001"
+    name: "John Doe"
+    initial_status: "active"
+  
+  - id: "D002"
+    name: "Jane Smith"
+    initial_status: "active"
+  
+  - id: "D003"
+    name: "Bob Johnson"
+    initial_status: "offline"
+
+monitoring:
+  # Refresh interval in seconds
+  refresh_interval: 30
+  
+  # Log driver status changes
+  log_changes: true
+  
+  # Alert thresholds
+  alerts:
+    min_active_drivers: 2
+    max_break_duration_minutes: 30
